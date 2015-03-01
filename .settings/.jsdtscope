@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="WEB-INF/resources/html/DS_138-2012-EF.html|WEB-INF/resources/html/DS_184-2008-EF.html|WEB-INF/resources/html/Ley_Transparencia.html|WEB-INF/resources/javascript/kendo/|WEB-INF/resources/javascript/knockout-2.3.0.debug.js|WEB-INF/resources/javascript/knockout-2.3.0.js" kind="src" path="src/main/webapp"/>
+	<classpathentry kind="src" path="target/m2e-wtp/web-resources"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.WebProject">
+		<attributes>
+			<attribute name="hide" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.baseBrowserLibrary"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

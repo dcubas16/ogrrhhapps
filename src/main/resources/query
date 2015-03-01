@@ -1,0 +1,8 @@
+select * from erpsys.notas
+
+select nota0_.leyNorma_id_normas as leyNorma5_2_,
+ nota0_.descripcionNota as descripc1_2_, 
+ nota0_.id_nota as id2_2_, 
+ nota0_.textoLey as textoLey2_, 
+ nota0_.todasLeyes as todasLeyes2_ 
+ from notas nota0_
