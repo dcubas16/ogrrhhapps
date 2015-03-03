@@ -26,6 +26,6 @@
 <!-- 	<bean id="deployProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean" -->
 <!--        p:location="WEB-INF/dataBaseConnection.properties" />	 -->
 
-<!-- 	<import resource="classpath:org/ogrrhhapps/ogrrhhapps-hibernate-context-config.xml" /> -->
+	<import resource="classpath:org/ogrrhhapps/ogrrhhapps-hibernate-context-config.xml" />
 
 </beans>

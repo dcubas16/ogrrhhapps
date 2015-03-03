@@ -30,22 +30,6 @@
 			</props>
 		</property>
 	</bean>
-	<bean id="LeyNormaDAO"
-		class="org.ogrrhhapps.dao.LeyNormaDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="RoleDAO"
-		class="org.ogrrhhapps.dao.RoleDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="UserDAO"
-		class="org.ogrrhhapps.dao.UserDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="AnotacionDAO"
-		class="org.ogrrhhapps.dao.AnotacionDAOImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
