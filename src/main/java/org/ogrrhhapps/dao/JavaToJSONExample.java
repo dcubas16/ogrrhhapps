@@ -12,20 +12,20 @@ public class JavaToJSONExample
    public static void main(String[] args)
    {
 
-      Servidor servidor = new Servidor("1", "Lokesh", "Gupta", "Luis");
-      ObjectMapper mapper = new ObjectMapper();
-      try
-      {
-         System.out.print(mapper.writeValueAsString(servidor));// servidor);
-      } catch (JsonGenerationException e)
-      {
-         e.printStackTrace();
-      } catch (JsonMappingException e)
-      {
-         e.printStackTrace();
-      } catch (IOException e)
-      {
-         e.printStackTrace();
-      }
+//      Servidor servidor = new Servidor("1", "Lokesh", "Gupta", "Luis");
+//      ObjectMapper mapper = new ObjectMapper();
+//      try
+//      {
+//         System.out.print(mapper.writeValueAsString(servidor));// servidor);
+//      } catch (JsonGenerationException e)
+//      {
+//         e.printStackTrace();
+//      } catch (JsonMappingException e)
+//      {
+//         e.printStackTrace();
+//      } catch (IOException e)
+//      {
+//         e.printStackTrace();
+//      }
    }
 }

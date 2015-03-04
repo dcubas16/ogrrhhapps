@@ -78,8 +78,12 @@
 					    		 serApeMat: viewModel.serApeMat(),
 					    		 serNombres: viewModel.serNombres()	}
 			        	})
-			        	  .done(function( msg ) {
-			        	    alert( "Data Saved: " + msg );
+			        	  .done(function( response ) {
+			        		  viewModel.servidoresEncontrados(JSON.parse(response));
+			        		  var dataSource = new kendo.data.DataSource({data:viewModel.servidoresEncontrados()});
+			        		  var grid = $("#grid").data("kendoGrid");
+			        		  grid.setDataSource(dataSource);
+			        		  grid.refresh();
 			        	  }).fail(function( jqxhr, textStatus, error ) {
 	 			        	    var err = textStatus + ", " + error;
 	 			        	    console.log( "Request Failed: " + err );
@@ -93,18 +97,19 @@
 						schema : {
 							model : {
 								fields : {
-									ser_doc_id_act : {
+									serDocIdAct : {
 										type : "string"
 									},
-									ser_ape_pat : {
+									serApePat : {
 										type : "string"
 									},
-									ser_ape_mat : {
+									serApeMat : {
 										type : "string"
 									},
-									ser_nombres : {
+									serNombres : {
 										type : "string"
-									},
+									}
+									,
 									total_du : {
 										type : "number"
 									}
@@ -117,30 +122,35 @@
 						serverSorting : true
 					},
 					height : 550,
-					filterable : true,
+// 					filterable : true,
 					sortable : true,
 					pageable : true,
 					columns : [ {
-						field : "ser_doc_id_act",
+						field : "serDocIdAct",
 						title : "Doc. Ident.",
 						filterable : false
 					}, {
-						field : "ser_ape_pat",
+						field : "serApePat",
 						title : "Ap. Paterno",
 						filterable : false
 					}, {
-						field : "ser_ape_mat",
+						field : "serApeMat",
 						title : "Ap. Materno",
 						filterable : false
 					}, {
-						field : "ser_nombres",
+						field : "serNombres",
 						title : "Nombres",
 						filterable : false
-					}, {
+					}
+					, {
 						field : "total_du",
 						title : "Total D.U. 037-94",
 						filterable : false
-					} ]
+					} , {
+						title : "Reporte",
+						filterable : false
+					} 
+					]
 				});
 			});
 		</script>
