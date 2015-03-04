@@ -1,6 +1,5 @@
 package org.ogrrhhapps.dao;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.codehaus.jackson.JsonGenerationException;
@@ -12,7 +11,7 @@ public class JavaToJSONExample
 {
    public static void main(String[] args)
    {
-      @SuppressWarnings("deprecation")
+
       Servidor servidor = new Servidor("1", "Lokesh", "Gupta", "Luis");
       ObjectMapper mapper = new ObjectMapper();
       try

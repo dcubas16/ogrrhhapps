@@ -14,9 +14,7 @@ public class ServidoresServiceImpl implements ServidoresService {
 	public String getServidores(String serDocIdAct, String serApePat,
 			String serApeMat, String serNombres) {
 
-		servidoresDAO.getServidores(serDocIdAct, serApePat, serApeMat, serNombres);
-		
-		return null;
+		return servidoresDAO.getServidores(serDocIdAct, serApePat, serApeMat, serNombres);
 	}
 
 }
