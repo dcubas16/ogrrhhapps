@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte3794" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3d36be0-7850-4dad-92a7-6d389f0f8510">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="169"/>
+	<field name="serApePat" class="java.lang.String"/>
+	<field name="serApeMat" class="java.lang.String"/>
+	<field name="serNombres" class="java.lang.String"/>
+	<field name="serDocIdAct" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="76" y="0" width="452" height="79" uuid="c9ffbd3d-0968-4ecf-9911-b5d2c8be50ae"/>
+				<imageExpression><![CDATA["C:\\Users\\diego\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="80" width="545" height="20" uuid="e85f29a3-7d6e-4875-a752-0f15226a7d23"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[  CONSTANCIA DE PAGOS DETALLADO CONFORME AL DECRETO DE URGENCIA Nº 037-94]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="108" width="100" height="20" uuid="b406445e-0f53-4076-8add-612ccee448a8"/>
+				<textFieldExpression><![CDATA[$F{serApePat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="108" width="100" height="20" uuid="36db3800-5bb2-4e6a-bda6-01947a9b2812"/>
+				<textFieldExpression><![CDATA[$F{serApeMat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="108" width="100" height="20" uuid="55a3b540-bc7e-44d7-8575-db9f41c11e0a"/>
+				<textFieldExpression><![CDATA[$F{serNombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="108" width="100" height="20" uuid="e35dc895-f77a-444e-bac3-b115a4c97888"/>
+				<textFieldExpression><![CDATA[$F{serDocIdAct}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="413" y="22" width="80" height="20" uuid="40720fc4-e1d3-4ea8-bc4d-893122a4b216"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="505" y="22" width="40" height="20" uuid="67768639-11d5-49ea-8ec2-09e298176099"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

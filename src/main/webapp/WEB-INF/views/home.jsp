@@ -110,7 +110,7 @@
 										type : "string"
 									}
 									,
-									total_du : {
+									totalDu37 : {
 										type : "number"
 									}
 								}
@@ -143,7 +143,7 @@
 						filterable : false
 					}
 					, {
-						field : "total_du",
+						field : "totalDu37",
 						title : "Total D.U. 037-94",
 						filterable : false
 					} , {
