@@ -33,7 +33,7 @@ public class Servidor implements java.io.Serializable {
 	@Column(name="ser_nombres")
 	private String serNombres;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "serCod", cascade=CascadeType.ALL, targetEntity=ServidorTrabajo.class)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "servidor", cascade=CascadeType.ALL, targetEntity=ServidorTrabajo.class)
 	private Set<ServidorTrabajo> servidorTrabajos = new HashSet<ServidorTrabajo>(0);
 	
 }

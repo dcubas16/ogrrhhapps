@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name = "remuneraciones", schema ="OGRRHHDB")
 public class Remuneracion implements java.io.Serializable{
@@ -39,6 +41,7 @@ public class Remuneracion implements java.io.Serializable{
 	@Column(name="total_du_37")
 	private double totalDu37;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ser_cod")
 	private ServidorTrabajo servidorTrabajo;

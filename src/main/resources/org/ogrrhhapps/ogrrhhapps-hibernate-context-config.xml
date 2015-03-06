@@ -23,10 +23,10 @@
 				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
 				<prop key="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</prop>
 				<prop key="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</prop>
-				<prop key="hibernate.connection.username">SYS as SYSDBA</prop>
+				<prop key="hibernate.connection.username">OGRRHHDB</prop>
 				<prop key="hibernate.connection.password">Electromusic1</prop>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
+<!-- 				<prop key="hibernate.current_session_context_class">thread</prop> -->
 			</props>
 		</property>
 	</bean>

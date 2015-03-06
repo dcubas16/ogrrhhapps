@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name = "SERVIDOR_TRABAJO", schema ="OGRRHHDB")
 public class ServidorTrabajo implements java.io.Serializable {
@@ -29,11 +31,12 @@ public class ServidorTrabajo implements java.io.Serializable {
 //	@Column(name="num_serest")
 //	private String numSerEst;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ser_doc_id_act")
 	private Servidor servidor;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id", cascade=CascadeType.ALL, targetEntity=Remuneracion.class)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "servidorTrabajo", cascade=CascadeType.ALL, targetEntity=Remuneracion.class)
 	private Set<Remuneracion> remuneraciones = new HashSet<Remuneracion>(0);
 	
 }

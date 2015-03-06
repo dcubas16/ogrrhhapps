@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class ServidoresDAOImpl extends HibernateDaoSupport implements
 		ServidoresDAO {
 
