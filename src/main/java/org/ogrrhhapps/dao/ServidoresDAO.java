@@ -8,6 +8,8 @@ public interface ServidoresDAO {
 
 	public String getServidores(String serDocIdAct, String serApePat,
 			String serApeMat, String serNombres);
+	
+	public String getServidor(String serDocIdAct);
 }
 
 

@@ -23,16 +23,24 @@
 		<log4j.version>1.2.14</log4j.version>
 		<javax.servlet-api.version>2.5</javax.servlet-api.version>
 		<javax.jstl-taglibs.version>1.1.2</javax.jstl-taglibs.version>
+
+		<!-- Json -->
 		<jackson.version>1.9.3</jackson.version>
 		<jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
 
 		<!-- Testing -->
 		<mockito.version>1.8.5</mockito.version>
 		<junit.version>4.8.2</junit.version>
+
 		<!-- Plugins -->
 		<maven.copy.plugin.version>0.2.3</maven.copy.plugin.version>
 		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
 		<maven.apt.plugin.version>1.0</maven.apt.plugin.version>
+
+		<!-- Jasper -->
+		<jasper.version>6.0.3</jasper.version>
+		<commons.digester.version>2.1</commons.digester.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
 	</properties>
 
 	<dependencies>
@@ -366,6 +374,52 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson-mapper-asl.version}</version>
 		</dependency>
+
+		<!-- Jasper -->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>${jasper.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-collections</artifactId>
+					<groupId>commons-collections</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-beanutils</artifactId>
+					<groupId>commons-beanutils</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-digester</artifactId>
+					<groupId>commons-digester</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Dependency required by Jasper -->
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>${commons.digester.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Dependency required by Jasper -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

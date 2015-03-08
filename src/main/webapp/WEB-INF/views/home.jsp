@@ -146,10 +146,8 @@
 						field : "totalDu37",
 						title : "Total D.U. 037-94",
 						filterable : false
-					} , {
-						title : "Reporte",
-						filterable : false
-					} 
+					} ,  
+					{ command: { text: "Ver Reporte", click: alert("HI") }, title: "", width: "180px" }
 					]
 				});
 			});
