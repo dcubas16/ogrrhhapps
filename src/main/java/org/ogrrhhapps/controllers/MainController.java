@@ -1,11 +1,8 @@
 package org.ogrrhhapps.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 
 import org.ogrrhhapps.dto.StatusResponse;
-import org.ogrrhhapps.entities.Remuneracion;
 import org.ogrrhhapps.services.DownloadService;
 import org.ogrrhhapps.services.RemuneracionService;
 import org.ogrrhhapps.services.ServidoresService;
@@ -54,19 +51,22 @@ public class MainController {
 	
 	@RequestMapping(value="/download/progress")
 	public @ResponseBody StatusResponse checkDownloadProgress(@RequestParam String token) {
+//		System.out.println("checkDownloadProgress");
 		return new StatusResponse(true, tokenService.check(token));
 	}
 	
 	@RequestMapping(value="/download/token")
 	public @ResponseBody StatusResponse getDownloadToken() {
+//		System.out.println("getDownloadToken");
 		return new StatusResponse(true, tokenService.generate());
 	}
 	
 	@RequestMapping(value="/download")
 	public void download(@RequestParam String type,
-			@RequestParam String token, 
+			@RequestParam String token, @RequestParam String serDocIdAct, 
 			HttpServletResponse response) {
-		downloadService.download(type, token, response);
+//		System.out.println("download");
+		downloadService.download(type, token, serDocIdAct, response);
 	}
 	
 }

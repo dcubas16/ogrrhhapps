@@ -1,5 +1,6 @@
 package org.ogrrhhapps.dao;
 
+import org.ogrrhhapps.entities.Servidor;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,7 +10,7 @@ public interface ServidoresDAO {
 	public String getServidores(String serDocIdAct, String serApePat,
 			String serApeMat, String serNombres);
 	
-	public String getServidor(String serDocIdAct);
+	public Servidor getServidor(String serDocIdAct);
 }
 
 

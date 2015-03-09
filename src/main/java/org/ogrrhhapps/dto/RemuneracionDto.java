@@ -1,4 +1,4 @@
-package org.ogrrhhapps.entities;
+package org.ogrrhhapps.dto;
 
 
 public class RemuneracionDto implements java.io.Serializable{

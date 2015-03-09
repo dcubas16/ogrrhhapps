@@ -35,5 +35,68 @@ public class Servidor implements java.io.Serializable {
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "servidor", cascade=CascadeType.ALL, targetEntity=ServidorTrabajo.class)
 	private Set<ServidorTrabajo> servidorTrabajos = new HashSet<ServidorTrabajo>(0);
+
+	public Servidor(String serDocIdAct, String serApePat, String serApeMat,
+			String serNombres, Set<ServidorTrabajo> servidorTrabajos) {
+		super();
+		this.serDocIdAct = serDocIdAct;
+		this.serApePat = serApePat;
+		this.serApeMat = serApeMat;
+		this.serNombres = serNombres;
+		this.servidorTrabajos = servidorTrabajos;
+	}
+
+	public Servidor() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Servidor(String serDocIdAct, String serApePat, String serApeMat,
+			String serNombres) {
+		super();
+		this.serDocIdAct = serDocIdAct;
+		this.serApePat = serApePat;
+		this.serApeMat = serApeMat;
+		this.serNombres = serNombres;
+	}
+
+	public String getSerDocIdAct() {
+		return serDocIdAct;
+	}
+
+	public void setSerDocIdAct(String serDocIdAct) {
+		this.serDocIdAct = serDocIdAct;
+	}
+
+	public String getSerApePat() {
+		return serApePat;
+	}
+
+	public void setSerApePat(String serApePat) {
+		this.serApePat = serApePat;
+	}
+
+	public String getSerApeMat() {
+		return serApeMat;
+	}
+
+	public void setSerApeMat(String serApeMat) {
+		this.serApeMat = serApeMat;
+	}
+
+	public String getSerNombres() {
+		return serNombres;
+	}
+
+	public void setSerNombres(String serNombres) {
+		this.serNombres = serNombres;
+	}
+
+	public Set<ServidorTrabajo> getServidorTrabajos() {
+		return servidorTrabajos;
+	}
+
+	public void setServidorTrabajos(Set<ServidorTrabajo> servidorTrabajos) {
+		this.servidorTrabajos = servidorTrabajos;
+	}
 	
 }

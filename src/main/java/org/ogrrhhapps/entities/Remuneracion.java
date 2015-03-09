@@ -45,5 +45,69 @@ public class Remuneracion implements java.io.Serializable{
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ser_cod")
 	private ServidorTrabajo servidorTrabajo;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getSerDocIdAct() {
+		return serDocIdAct;
+	}
+
+	public void setSerDocIdAct(String serDocIdAct) {
+		this.serDocIdAct = serDocIdAct;
+	}
+
+	public int getPlaAnu() {
+		return plaAnu;
+	}
+
+	public void setPlaAnu(int plaAnu) {
+		this.plaAnu = plaAnu;
+	}
+
+	public int getPlaMes() {
+		return plaMes;
+	}
+
+	public void setPlaMes(int plaMes) {
+		this.plaMes = plaMes;
+	}
+
+	public int getCodTipPla() {
+		return codTipPla;
+	}
+
+	public void setCodTipPla(int codTipPla) {
+		this.codTipPla = codTipPla;
+	}
+
+	public double getTotalRem() {
+		return totalRem;
+	}
+
+	public void setTotalRem(double totalRem) {
+		this.totalRem = totalRem;
+	}
+
+	public double getTotalDu37() {
+		return totalDu37;
+	}
+
+	public void setTotalDu37(double totalDu37) {
+		this.totalDu37 = totalDu37;
+	}
+
+	public ServidorTrabajo getServidorTrabajo() {
+		return servidorTrabajo;
+	}
+
+	public void setServidorTrabajo(ServidorTrabajo servidorTrabajo) {
+		this.servidorTrabajo = servidorTrabajo;
+	}
 	
 }

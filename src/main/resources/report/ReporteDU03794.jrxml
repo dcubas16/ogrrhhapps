@@ -1,69 +1,399 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte3794" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3d36be0-7850-4dad-92a7-6d389f0f8510">
-	<property name="ireport.zoom" value="1.0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte3794" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3d36be0-7850-4dad-92a7-6d389f0f8510">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="169"/>
-	<field name="serApePat" class="java.lang.String"/>
-	<field name="serApeMat" class="java.lang.String"/>
-	<field name="serNombres" class="java.lang.String"/>
-	<field name="serDocIdAct" class="java.lang.String"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#F3F6F8"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="1efd2e67-6e88-4282-8c17-4641e9a71fca">
+		<field name="plaAnu" class="java.lang.String"/>
+		<field name="duEnero" class="java.lang.String"/>
+		<field name="duFebrero" class="java.lang.String"/>
+		<field name="duMarzo" class="java.lang.String"/>
+		<field name="duAbril" class="java.lang.String"/>
+		<field name="duMayo" class="java.lang.String"/>
+		<field name="duJunio" class="java.lang.String"/>
+		<field name="duJulio" class="java.lang.String"/>
+		<field name="duAgosto" class="java.lang.String"/>
+		<field name="duSetiembre" class="java.lang.String"/>
+		<field name="duOctubre" class="java.lang.String"/>
+		<field name="duNoviembre" class="java.lang.String"/>
+		<field name="duDiciembre" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Table Dataset 2" uuid="7272a76b-11c0-4f3b-92c7-8d2b3cfcb7a6"/>
+	<subDataset name="Table Dataset 3" uuid="85042c13-809b-4efb-807f-3c323b519783"/>
+	<subDataset name="Table Dataset 4" uuid="efa8df82-74ff-487e-a4dd-33392084a81e"/>
+	<parameter name="serDocIdAct" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="serApePat" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="serApeMat" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="serNombres" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaActual" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<field name="plaAnu" class="java.lang.Integer"/>
+	<field name="duEnero" class="java.lang.Double"/>
+	<field name="duFebrero" class="java.lang.Double"/>
+	<field name="duMarzo" class="java.lang.Double"/>
+	<field name="duAbril" class="java.lang.Double"/>
+	<field name="duMayo" class="java.lang.Double"/>
+	<field name="duJunio" class="java.lang.Double"/>
+	<field name="duJulio" class="java.lang.Double"/>
+	<field name="duAgosto" class="java.lang.Double"/>
+	<field name="duSetiembre" class="java.lang.Double"/>
+	<field name="duOctubre" class="java.lang.Double"/>
+	<field name="duNoviembre" class="java.lang.Double"/>
+	<field name="duDiciembre" class="java.lang.Double"/>
+	<variable name="totalPorAnio_SUM" class="java.lang.Double" resetType="Group" resetGroup="totalPorAnio" calculation="Sum">
+		<variableExpression><![CDATA[$F{duEnero}+$F{duFebrero}+$F{duMarzo}+$F{duAbril}+$F{duMayo}+$F{duJunio}+$F{duJulio}+$F{duAgosto}+$F{duSetiembre}+$F{duOctubre}+$F{duNoviembre}+$F{duDiciembre}]]></variableExpression>
+	</variable>
+	<group name="totalPorAnio">
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="141" splitType="Stretch">
-			<image>
-				<reportElement x="76" y="0" width="452" height="79" uuid="c9ffbd3d-0968-4ecf-9911-b5d2c8be50ae"/>
-				<imageExpression><![CDATA["C:\\Users\\diego\\Desktop\\logo.jpg"]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement x="0" y="80" width="545" height="20" uuid="e85f29a3-7d6e-4875-a752-0f15226a7d23"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[  CONSTANCIA DE PAGOS DETALLADO CONFORME AL DECRETO DE URGENCIA Nº 037-94]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="42" y="108" width="100" height="20" uuid="b406445e-0f53-4076-8add-612ccee448a8"/>
-				<textFieldExpression><![CDATA[$F{serApePat}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="167" y="108" width="100" height="20" uuid="36db3800-5bb2-4e6a-bda6-01947a9b2812"/>
-				<textFieldExpression><![CDATA[$F{serApeMat}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="296" y="108" width="100" height="20" uuid="55a3b540-bc7e-44d7-8575-db9f41c11e0a"/>
-				<textFieldExpression><![CDATA[$F{serNombres}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="413" y="108" width="100" height="20" uuid="e35dc895-f77a-444e-bac3-b115a4c97888"/>
-				<textFieldExpression><![CDATA[$F{serDocIdAct}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="9" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="158" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="94" width="779" height="57" uuid="499a69b9-8a18-4228-b1a9-c4b3a5ec4234"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   De conformidad con las planillas de pago de haberes, constan los servicios prestados por el(la) Sr(a). "+ $P{serApePat} + " " + $P{serApeMat} + " " + $P{serNombres} + ", identificado(a) con D.N.I. Nº " + $P{serDocIdAct} + "  , con los pagos percibidos conforme al D.U. Nº 037-94, en la forma siguiente:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="78" y="63" width="662" height="19" uuid="e85f29a3-7d6e-4875-a752-0f15226a7d23"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  CONSTANCIA DE PAGOS DETALLADO CONFORME AL DECRETO DE URGENCIA Nº 037-94]]></text>
+			</staticText>
+			<image>
+				<reportElement x="244" y="0" width="367" height="53" uuid="c9ffbd3d-0968-4ecf-9911-b5d2c8be50ae"/>
+				<imageExpression><![CDATA["C:\\Users\\diego\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="664" y="0" width="112" height="20" uuid="cf9e717a-4c35-4cfb-b608-62ac3e6d954a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement style="table_TH" x="41" y="1" width="55" height="20" uuid="5608af50-5273-431c-87dc-4bf0721e61d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AÑO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="96" y="1" width="55" height="20" uuid="2ba0f94a-fdae-4505-af08-bd2bca46e8da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Enero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="151" y="1" width="55" height="20" uuid="ac30e9d4-4e3b-4b91-b087-9059aaa0fdf9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Febrero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="206" y="1" width="55" height="20" uuid="f4efc6ae-79c5-4809-a38b-e5961ea4ecef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marzo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="261" y="1" width="55" height="20" uuid="763084eb-d07e-46e8-b679-6154b83e43b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Abril]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="316" y="1" width="55" height="20" uuid="730a50e5-da59-4619-885d-5973ed2f71a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mayo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="371" y="1" width="55" height="20" uuid="d1a60357-bde2-4e8c-8378-fef76fc64a59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Junio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="426" y="1" width="55" height="20" uuid="34c23e87-54fe-4c53-ad4b-1ca7b20c47e2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Julio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="481" y="1" width="55" height="20" uuid="479587ab-71e3-4b24-ad9b-8ea617c9df35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Agosto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="536" y="1" width="55" height="20" uuid="c033cae3-bb0e-4dfd-8ece-6383c7f692ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Setiembre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="591" y="1" width="55" height="20" uuid="3a0b8cbc-c2ed-4349-a005-a49a2a2a925d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Octubre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="646" y="1" width="55" height="20" uuid="768a7fcb-1ab4-446a-8b52-dac22c1b6808"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Noviembre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="701" y="1" width="55" height="20" uuid="abd533fc-5af5-40e1-85c3-a9b60c026150"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diciembre]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement style="table_TD" x="41" y="1" width="55" height="20" uuid="99c7fcda-d13c-4c3d-945c-7c23daaf0239"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{plaAnu}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="96" y="1" width="55" height="20" uuid="dcfa4063-7f43-4904-9bb6-76ee9bacee60"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duEnero}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="261" y="1" width="55" height="20" uuid="d8de64b7-fbd0-4a85-ba3f-f94b7b294976"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duAbril}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="371" y="1" width="55" height="20" uuid="20d9f101-c18d-4456-9c71-cc74ee91f521"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duJunio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="426" y="1" width="55" height="20" uuid="d3dac953-dc0f-42e2-98ec-4e3d3f573489"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duJulio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="591" y="1" width="55" height="20" uuid="e93347bc-c856-46ef-818f-d5351fa5644d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duOctubre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="646" y="1" width="55" height="20" uuid="c2281f8e-29dc-438e-9527-f06734f0a0c4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duNoviembre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="151" y="1" width="55" height="20" uuid="966dbaeb-f72b-4616-af51-567120ba5e1a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duFebrero}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="316" y="1" width="55" height="20" uuid="3c1c27d7-cd48-4a4e-91e5-b412133df4ae"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duMayo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="481" y="1" width="55" height="20" uuid="13eba733-f295-41ef-b1b4-02a6b08b9fb4"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duAgosto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="536" y="1" width="55" height="20" uuid="8abe5ce4-3a11-47c9-8109-d5bb4f04c36d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duSetiembre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="701" y="1" width="55" height="20" uuid="32655c8a-a5a6-4219-a51e-6608c95e94b2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duDiciembre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement style="table_TD" x="206" y="1" width="55" height="20" uuid="168a432b-2cb3-4260-a43f-cf1e1f1d3f94"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{duMarzo}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch">
+		<band height="33" splitType="Stretch">
 			<textField>
-				<reportElement x="413" y="22" width="80" height="20" uuid="40720fc4-e1d3-4ea8-bc4d-893122a4b216"/>
+				<reportElement x="561" y="13" width="192" height="20" uuid="2b6c4e26-fd6b-429b-84e3-f828127f61ab"/>
 				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
-				<reportElement x="505" y="22" width="40" height="20" uuid="67768639-11d5-49ea-8ec2-09e298176099"/>
+				<reportElement x="753" y="13" width="40" height="20" uuid="1095d26b-6e1c-422f-97d2-f445e005f7af"/>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement x="119" y="88" width="249" height="20" uuid="2f1cfe73-dbb0-4b8f-9a43-2f1d51a0c86d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Econ. Victor Félix Portocarrero Chávez]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="67" y="108" width="346" height="20" uuid="c307ee95-18a1-449f-8669-da87fd5a3db6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jefe (e) de la Oficina General de Recursos Humanos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="68" width="249" height="20" uuid="dd9f3a0b-ce60-4735-b56b-58c719c8803e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[____________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table_TH" x="533" y="20" width="167" height="20" uuid="593d01f6-34e6-463e-be43-c27a69c5c6ce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL D.U. 037-94   S/.]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+				<reportElement style="table_CH" mode="Opaque" x="700" y="20" width="53" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="56a00f3f-c237-43da-bc92-ddf10e5c724d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalPorAnio_SUM}]]></textFieldExpression>
 			</textField>
 		</band>
 	</summary>

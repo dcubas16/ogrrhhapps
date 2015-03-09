@@ -1,4 +1,4 @@
-package org.ogrrhhapps.entities;
+package org.ogrrhhapps.dto;
 
 
 public class ServidorDto implements java.io.Serializable {
@@ -12,6 +12,13 @@ public class ServidorDto implements java.io.Serializable {
 	private String serApeMat;
 	
 	private String serNombres;
+	
+	public ServidorDto(String serApePat, String serApeMat, String serNombres) {
+		super();
+		this.serApePat = serApePat;
+		this.serApeMat = serApeMat;
+		this.serNombres = serNombres;
+	}
 
 	public String getSerDocIdAct() {
 		return serDocIdAct;
