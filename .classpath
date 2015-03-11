@@ -11,13 +11,18 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="org/ogrrhhapps/filereader/|org/ogrrhhapps/security/|org/ogrrhhapps/dao/AnotacionDAO.java|org/ogrrhhapps/dao/AnotacionDAOImpl.java|org/ogrrhhapps/dao/LeyNormaDAO.java|org/ogrrhhapps/dao/LeyNormaDAOImpl.java|org/ogrrhhapps/dao/RoleDAO.java|org/ogrrhhapps/dao/RoleDAOImpl.java|org/ogrrhhapps/dao/UserDAO.java|org/ogrrhhapps/dao/UserDAOImpl.java|org/ogrrhhapps/services/AnotacionesService.java|org/ogrrhhapps/services/AnotacionesServiceImpl.java|org/ogrrhhapps/services/LeyesYNormasService.java|org/ogrrhhapps/services/LeyesYNormasServiceImpl.java|org/ogrrhhapps/services/RoleService.java|org/ogrrhhapps/services/RoleServiceImpl.java|org/ogrrhhapps/services/UserNavigationHistoryService.java|org/ogrrhhapps/services/UserNavigationHistoryServiceImpl.java|org/ogrrhhapps/services/UserService.java|org/ogrrhhapps/services/UserServiceImpl.java|org/ogrrhhapps/entities/HistorialNavegacionDeUsuario.java|org/ogrrhhapps/entities/HistorialNavegacionDeUsuarioId.java|org/ogrrhhapps/entities/LeyNorma.java|org/ogrrhhapps/entities/Nota.java|org/ogrrhhapps/entities/NotaId.java|org/ogrrhhapps/entities/Role.java|org/ogrrhhapps/entities/User.java|org/ogrrhhapps/entities/Usuario.java|org/ogrrhhapps/dao/JavaToJSONExample.java" kind="src" path="src/main/java"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_55"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

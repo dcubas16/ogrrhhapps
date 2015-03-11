@@ -18,7 +18,7 @@ import javax.persistence.Table;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
-@Table(name = "SERVIDOR_TRABAJO", schema ="OGRRHHDB")
+@Table(name = "TB37_SERVIDOR_TRABAJO", schema ="DATAPERSUEL")
 public class ServidorTrabajo implements java.io.Serializable {
 
 	private static final long serialVersionUID = 7847775958930666088L;

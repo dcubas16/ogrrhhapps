@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "servidores", schema ="OGRRHHDB")
+@Table(name = "TB37_servidores", schema ="DATAPERSUEL")
 public class Servidor implements java.io.Serializable {
 
 	private static final long serialVersionUID = 7847775958930666088L;

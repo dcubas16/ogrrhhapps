@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
-@Table(name = "remuneraciones", schema ="OGRRHHDB")
+@Table(name = "TB37_remuneraciones", schema ="DATAPERSUEL")
 public class Remuneracion implements java.io.Serializable{
 
 	private static final long serialVersionUID = 1475297877220808378L;
@@ -21,7 +21,7 @@ public class Remuneracion implements java.io.Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="id", unique = true, nullable = false)
-	private String id;
+	private int id;
 	
 	@Column(name="ser_doc_id_act")
 	private String serDocIdAct;
@@ -46,11 +46,35 @@ public class Remuneracion implements java.io.Serializable{
 	@JoinColumn(name = "ser_cod")
 	private ServidorTrabajo servidorTrabajo;
 
-	public String getId() {
+
+	public Remuneracion(int id, String serDocIdAct, int plaAnu, int plaMes,
+			int codTipPla, double totalRem, double totalDu37) {
+		super();
+		this.id = id;
+		this.serDocIdAct = serDocIdAct;
+		this.plaAnu = plaAnu;
+		this.plaMes = plaMes;
+		this.codTipPla = codTipPla;
+		this.totalRem = totalRem;
+		this.totalDu37 = totalDu37;
+	}
+
+	public Remuneracion(String serDocIdAct, int plaAnu, int plaMes,
+			int codTipPla, double totalRem, double totalDu37) {
+		super();
+		this.serDocIdAct = serDocIdAct;
+		this.plaAnu = plaAnu;
+		this.plaMes = plaMes;
+		this.codTipPla = codTipPla;
+		this.totalRem = totalRem;
+		this.totalDu37 = totalDu37;
+	}
+	
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

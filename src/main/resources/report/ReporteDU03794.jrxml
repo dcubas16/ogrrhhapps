@@ -120,6 +120,7 @@
 	<parameter name="fechaActual" class="java.lang.String">
 		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
 	</parameter>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<field name="plaAnu" class="java.lang.Integer"/>
 	<field name="duEnero" class="java.lang.Double"/>
 	<field name="duFebrero" class="java.lang.Double"/>
@@ -166,15 +167,15 @@
 				</textElement>
 				<text><![CDATA[  CONSTANCIA DE PAGOS DETALLADO CONFORME AL DECRETO DE URGENCIA Nº 037-94]]></text>
 			</staticText>
-			<image>
-				<reportElement x="244" y="0" width="367" height="53" uuid="c9ffbd3d-0968-4ecf-9911-b5d2c8be50ae"/>
-				<imageExpression><![CDATA["C:\\Users\\diego\\Desktop\\logo.jpg"]]></imageExpression>
-			</image>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement x="664" y="0" width="112" height="20" uuid="cf9e717a-4c35-4cfb-b608-62ac3e6d954a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="206" y="0" width="421" height="63" uuid="70fbfe9c-070a-48b7-bcb4-b5be006ef2d5"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>

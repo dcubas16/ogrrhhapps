@@ -28,10 +28,13 @@ import org.ogrrhhapps.entities.Servidor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
+
 @Service
 public class DownloadServiceImpl implements DownloadService {
 
 	public static final String TEMPLATE = "/report/ReporteDU03794.jrxml";
+	public static final String LOGO = "/report/logo.jpg";
 	protected static Logger logger = Logger.getLogger("service");
  
 	@Autowired
@@ -65,6 +68,7 @@ public class DownloadServiceImpl implements DownloadService {
 			params.put("serApeMat", servidor.getSerApeMat());
 			params.put("serNombres", servidor.getSerNombres());
 			params.put("fechaActual", dateFormat.format(currentDate));
+			params.put("logo", this.getClass().getResourceAsStream(LOGO));
 			 
 			// 2.  Retrieve template
 			InputStream reportStream = this.getClass().getResourceAsStream(TEMPLATE); 
