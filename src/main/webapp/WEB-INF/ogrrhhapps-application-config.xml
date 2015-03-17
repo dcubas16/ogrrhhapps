@@ -17,6 +17,18 @@
 		correct base-package -->
 	<context:component-scan base-package="org.ogrrhhapps" />
 
+	<context:property-placeholder
+		properties-ref="deployProperties" />
+
+
+	<!-- Configures the annotation-driven Spring MVC Controller programming 
+		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
+
+	<!-- Configures Hibernate -->
+	<bean id="deployProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean"
+		p:location="WEB-INF/dataBaseConnection.properties" />
+
 	<!-- Configures the annotation-driven Spring MVC Controller programming 
 		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
 	<mvc:annotation-driven />

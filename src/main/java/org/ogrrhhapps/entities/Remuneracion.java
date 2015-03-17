@@ -13,13 +13,13 @@ import javax.persistence.Table;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
-@Table(name = "TB37_remuneraciones", schema ="DATAPERSUEL")
+@Table(name = "remuneraciones", schema ="ogrrhhdb")
 public class Remuneracion implements java.io.Serializable{
 
 	private static final long serialVersionUID = 1475297877220808378L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id", unique = true, nullable = false)
 	private int id;
 	
@@ -46,6 +46,10 @@ public class Remuneracion implements java.io.Serializable{
 	@JoinColumn(name = "ser_cod")
 	private ServidorTrabajo servidorTrabajo;
 
+
+	public Remuneracion() {
+		super();
+	}
 
 	public Remuneracion(int id, String serDocIdAct, int plaAnu, int plaMes,
 			int codTipPla, double totalRem, double totalDu37) {

@@ -152,16 +152,16 @@
 		<band height="9" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="158" splitType="Stretch">
+		<band height="178" splitType="Stretch">
 			<textField>
-				<reportElement x="23" y="94" width="779" height="57" uuid="499a69b9-8a18-4228-b1a9-c4b3a5ec4234"/>
+				<reportElement x="23" y="114" width="779" height="57" uuid="499a69b9-8a18-4228-b1a9-c4b3a5ec4234"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["   De conformidad con las planillas de pago de haberes, constan los servicios prestados por el(la) Sr(a). "+ $P{serApePat} + " " + $P{serApeMat} + " " + $P{serNombres} + ", identificado(a) con D.N.I. Nº " + $P{serDocIdAct} + "  , con los pagos percibidos conforme al D.U. Nº 037-94, en la forma siguiente:"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="78" y="63" width="662" height="19" uuid="e85f29a3-7d6e-4875-a752-0f15226a7d23"/>
+				<reportElement x="81" y="89" width="662" height="19" uuid="e85f29a3-7d6e-4875-a752-0f15226a7d23"/>
 				<textElement textAlignment="Center">
 					<font size="14" isBold="true"/>
 				</textElement>
@@ -172,8 +172,8 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$P{fechaActual}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="206" y="0" width="421" height="63" uuid="70fbfe9c-070a-48b7-bcb4-b5be006ef2d5"/>
+			<image isUsingCache="true" isLazy="true" onErrorType="Blank">
+				<reportElement x="236" y="18" width="421" height="57" uuid="70fbfe9c-070a-48b7-bcb4-b5be006ef2d5"/>
 				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 		</band>
@@ -359,23 +359,23 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="128" splitType="Stretch">
+		<band height="160" splitType="Stretch">
 			<staticText>
-				<reportElement x="119" y="88" width="249" height="20" uuid="2f1cfe73-dbb0-4b8f-9a43-2f1d51a0c86d"/>
+				<reportElement x="67" y="120" width="249" height="20" uuid="2f1cfe73-dbb0-4b8f-9a43-2f1d51a0c86d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Econ. Victor Félix Portocarrero Chávez]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="67" y="108" width="346" height="20" uuid="c307ee95-18a1-449f-8669-da87fd5a3db6"/>
+				<reportElement x="25" y="140" width="346" height="20" uuid="c307ee95-18a1-449f-8669-da87fd5a3db6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Jefe (e) de la Oficina General de Recursos Humanos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="119" y="68" width="249" height="20" uuid="dd9f3a0b-ce60-4735-b56b-58c719c8803e"/>
+				<reportElement x="67" y="100" width="249" height="20" uuid="dd9f3a0b-ce60-4735-b56b-58c719c8803e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -396,6 +396,27 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{totalPorAnio_SUM}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="426" y="140" width="346" height="20" uuid="5c6e9cdf-4854-4edc-adc3-3ca625cea9d3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jefe de la Oficina de Pensiones y Beneficios Sociales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="468" y="120" width="249" height="20" uuid="08ad99a4-38bf-4853-ac25-6ba15e90100c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPC. Geremías Félix Esteban Camacuari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="468" y="100" width="249" height="20" uuid="3b145c53-6a61-4be7-97c1-2db8ce160509"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[____________________________________]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>

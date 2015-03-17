@@ -11,6 +11,7 @@
 	<context:component-scan base-package="org.ogrrhhapps" />
 	<context:annotation-config />
 	<tx:annotation-driven />
+<!-- 	<tx:annotation-driven transaction-manager="transactionManager"/> -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="packagesToScan">
@@ -20,13 +21,20 @@
 		</property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
-				<prop key="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</prop>
-				<prop key="hibernate.connection.url">jdbc:oracle:thin:@172.16.179.80:1521:QUIPUPRE</prop>
-				<prop key="hibernate.connection.username">QPDATAGESTION</prop>
-				<prop key="hibernate.connection.password">qpdataPre2013</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.connection.driver_class">${app.jdbc.driverClassName}</prop>
+				<prop key="hibernate.connection.url">${app.jdbc.url}</prop>
+				<prop key="hibernate.connection.username">${app.jdbc.username}</prop>
+				<prop key="hibernate.connection.password">${app.jdbc.password}</prop>
+				<!-- <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop> -->
+				<!-- <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/environment</prop> -->
+				<!-- <prop key="hibernate.connection.username">root</prop> -->
+				<!-- <prop key="hibernate.connection.password">root</prop> -->
 				<prop key="hibernate.show_sql">true</prop>
-
+				<!-- -->
+<!-- 				<prop key="hibernate.hbm2ddl.auto">create</prop> -->
+<!-- 				<prop key="hibernate.current_session_context_class">thread</prop> -->
+<!-- 				<prop key="hibernate.hbm2ddl.import_files">org/greypowerservices/import.sql</prop> -->
 			</props>
 		</property>
 	</bean>

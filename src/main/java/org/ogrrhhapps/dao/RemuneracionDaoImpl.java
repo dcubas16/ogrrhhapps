@@ -30,7 +30,7 @@ public class RemuneracionDaoImpl implements RemuneracionDao {
 				.setParameter("serDocIdAct", serDocIdAct).list().iterator();
 
 		List<Remuneracion> remuneraciones = new ArrayList<Remuneracion>();
-
+		
 		while (i.hasNext()) {
 			Object[] tuple = (Object[]) i.next();
 			remuneraciones.add(new Remuneracion(tuple[1].toString(), Integer
@@ -38,8 +38,42 @@ public class RemuneracionDaoImpl implements RemuneracionDao {
 					.toString()), Integer.parseInt(tuple[4].toString()), Double
 					.parseDouble(tuple[5].toString()), Double
 					.parseDouble(tuple[6].toString())));
-
+					
 		}
+		
+		int anioMenor = 5000;
+		for (Remuneracion remuneracion : remuneraciones) {
+			if(remuneracion.getPlaAnu() < anioMenor && remuneracion.getTotalDu37() > 0  ){
+				anioMenor = remuneracion.getPlaAnu();
+			}
+		}
+		
+		int mesMenor = 13;
+		double duMenor = 0;
+		for (Remuneracion remuneracion : remuneraciones) {
+			if(remuneracion.getPlaAnu() == anioMenor && remuneracion.getPlaMes() < mesMenor && remuneracion.getTotalDu37() > 0){
+				mesMenor = remuneracion.getPlaMes();
+				duMenor = remuneracion.getTotalDu37();
+			}
+		}
+		
+		System.out.println(anioMenor);
+		System.out.println(mesMenor);
+		for (Remuneracion remuneracion : remuneraciones) {
+			if(remuneracion.getPlaAnu() == anioMenor){
+				if( remuneracion.getPlaMes() <= mesMenor && remuneracion.getTotalDu37() == 0 ){
+					remuneracion.setTotalDu37(duMenor);
+					System.out.println(duMenor);
+				}
+			}
+			else if( remuneracion.getPlaAnu() < anioMenor ){
+				if( remuneracion.getTotalDu37() == 0 ){
+					remuneracion.setTotalDu37(duMenor);
+					System.out.println(duMenor);
+				}
+			}
+		}
+		
 		return remuneraciones;
 	}
 

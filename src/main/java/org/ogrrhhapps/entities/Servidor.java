@@ -14,13 +14,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB37_servidores", schema ="DATAPERSUEL")
+@Table(name = "servidores", schema ="ogrrhhdb")
 public class Servidor implements java.io.Serializable {
 
 	private static final long serialVersionUID = 7847775958930666088L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ser_doc_id_act", unique = true, nullable = false)
 	private String serDocIdAct;
 

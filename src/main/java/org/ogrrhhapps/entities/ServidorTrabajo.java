@@ -18,13 +18,13 @@ import javax.persistence.Table;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @Entity
-@Table(name = "TB37_SERVIDOR_TRABAJO", schema ="DATAPERSUEL")
+@Table(name = "SERVIDOR_TRABAJO", schema ="ogrrhhdb")
 public class ServidorTrabajo implements java.io.Serializable {
 
 	private static final long serialVersionUID = 7847775958930666088L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ser_cod", unique = true, nullable = false)
 	private String serCod;
 	

@@ -7,12 +7,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRParameter;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -69,6 +71,7 @@ public class DownloadServiceImpl implements DownloadService {
 			params.put("serNombres", servidor.getSerNombres());
 			params.put("fechaActual", dateFormat.format(currentDate));
 			params.put("logo", this.getClass().getResourceAsStream(LOGO));
+			params.put(JRParameter.REPORT_LOCALE, Locale.US); 
 			 
 			// 2.  Retrieve template
 			InputStream reportStream = this.getClass().getResourceAsStream(TEMPLATE); 
